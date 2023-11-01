@@ -25,8 +25,9 @@ function findLongestWord(str) {
       console.log(longestWordLength, "updatedLongestWordLength");
     }
   }
-
+  // Return the length of the longest word found in the input string.
   return longestWordLength;
 }
+// Call the findLongestWord function with the input string "This is a sample string."
 //display the word in the console
 findLongestWord("This is a sample string");
