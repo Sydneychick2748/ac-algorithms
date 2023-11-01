@@ -1,6 +1,9 @@
 
   // Write code here to make the decision tree into an algorithm!
 
+
+
+
   function transportationOptions(weather,  isHungry, time) {
     if (weather === "sunny" && time > 30) {
       return "Walk to your destination it is greater than 30 min.";
