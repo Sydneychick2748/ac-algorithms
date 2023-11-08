@@ -10,24 +10,52 @@ Read through the function and write comments to explain what is happening in the
 // Define a function named findLongestWord that takes a string 'str' as a parameter.
 
 function findLongestWord(str) {
-  // this will split the string into separate words and  create an array
+  // Split the input string into separate words and create an array.
   var words = str.split(" ");
-  console.log(words, "words");
-  // Initialize a variable 'longestWordLength' to keep track of the length of the longest word.
-  var longestWordLength = 0;
-  console.log(longestWordLength, "longestWordLength");
-  //this is going to loop threw the word to get every part of the longest word
-  for (var i = 0; i < words.length; i++) {
-    //Check if the length of the current word is greater than the current 'longestWordLength'.
-    if (words[i].length > longestWordLength) {
-      // update 'longestWordLength' with the length of the current word.
-      longestWordLength = words[i].length;
-      console.log(longestWordLength, "updatedLongestWordLength");
+// Initialize a variable 'shortestWord' to keep track of the shortest word.
+  var longestWord = words[0]; // Initialize with the first word.
+// Iterate through the array of words.
+  for (var i = 1; i < words.length; i++) {
+     // Check if the length of the current word is shorter than the length of 'shortestWord'.
+    if (words[i].length > longestWord.length) {
+      // Update 'shortestWord' with the current word if it's shorter.
+      longestWord = words[i];
     }
   }
-  // Return the length of the longest word found in the input string.
-  return longestWordLength;
+
+  return longestWord;
 }
-// Call the findLongestWord function with the input string "This is a sample string."
-//display the word in the console
-findLongestWord("This is a sample string");
+
+var longestWord = findLongestWord("This is a sample sentence to see which word is the longest.");
+console.log("The longest word in the sentence is: ", longestWord);
+
+
+
+// 1. How would we change this to find the shortest word?
+// Display the longest word in the console.
+
+function findShortestWord(str) {
+  // Split the input string into separate words and create an array.
+  var words = str.split(" ");
+  
+  // Initialize a variable 'shortestWord' to keep track of the shortest word.
+  var shortestWord = words[0]; // Initialize it with the first word in the array.
+
+  // Iterate through the array of words.
+  for (var i = 1; i < words.length; i++) {
+    // Check if the length of the current word is shorter than the length of 'shortestWord'.
+    if (words[i].length < shortestWord.length) {
+      // Update 'shortestWord' with the current word if it's shorter.
+      shortestWord = words[i];
+    }
+  }
+
+  // Return the shortest word found in the input string.
+  return shortestWord;
+}
+
+// Call the findShortestWord function with the input string.
+var shortestWord = findShortestWord("This is a sample sentence to see which word is the shortest.");
+console.log("The shortest word in the sentence is: ", shortestWord);
+
+ 
