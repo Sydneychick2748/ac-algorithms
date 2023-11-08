@@ -18,13 +18,35 @@ Steps:
 5. If the number is not found, add it to the object.
 6. After iterating through the entire array, if no duplicates are found, return false.
  */
-
-function hasDuplicates(arr) {
-   
-}
-
 // Example usage
 const numbers1 = [1, 2, 3, 4, 5, 6];
+console.log(numbers1,'numbers1')
 const numbers2 = [1, 2, 3, 4, 2, 6];
+console.log(numbers2, "numbers2")
+
+
+function hasDuplicates(arr) {
+    var obj = {}; // Create an empty object to store encountered numbers.
+
+    // Iterate through the input array.
+    for (var i = 0; i < arr.length; i++) {
+        var number = arr[i];
+
+         // If the number already exists in the object, there is a duplicate, so return true.
+         if (obj[number]) {
+            console.log("this has duplicates")
+            return true;
+        } else {
+            // If the number is not found, add it to the object.
+            obj[number] = true;
+        }
+    }
+
+    // After iterating through the entire array, if no duplicates are found, return false.
+    console.log("this has no duplicates")
+    return false;
+}
+
+
 console.log(hasDuplicates(numbers1)); // Output: false
 console.log(hasDuplicates(numbers2)); // Output: true
