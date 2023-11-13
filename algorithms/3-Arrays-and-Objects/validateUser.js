@@ -17,9 +17,6 @@ Steps
 3. Return true if a matching user is found; false otherwise.
  */
 
-function validateUserCredentials(users, inputUsername, inputPassword) {
-    
-}
 
 // Example usage
 const registeredUsers = [
@@ -29,4 +26,24 @@ const registeredUsers = [
 ];
 const username = "user1";
 const password = "password123";
+
+function validateUserCredentials(users, inputUsername, inputPassword) {
+    let isValidUser = false;
+
+    // Use the Array.prototype.forEach() method to iterate through all users.
+    users.forEach(function(user) {
+        // Check if the current user matches the given credentials.
+        if (user.username === inputUsername && user.password === inputPassword) {
+            isValidUser = true;
+        }
+    });
+
+    // Return true if a matching user is found; false otherwise.
+    return isValidUser;
+}
+
+
+
+
 console.log(validateUserCredentials(registeredUsers, username, password)); // Output: true
+
