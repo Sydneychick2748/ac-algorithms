@@ -23,6 +23,7 @@ const registeredUsers = [
     { username: "user1", password: "password123" },
     { username: "user2", password: "secretword" },
     { username: "admin", password: "admin123" }
+    
 ];
 const username = "user1";
 const password = "password123";
@@ -46,4 +47,6 @@ function validateUserCredentials(users, inputUsername, inputPassword) {
 
 
 console.log(validateUserCredentials(registeredUsers, username, password)); // Output: true
+
+
 
